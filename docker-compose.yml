@@ -1,0 +1,13 @@
+services:
+  spendwise:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      ADMIN_TOKEN: ${ADMIN_TOKEN:-change-me-please}
+      SPENDWISE_DB: /data/spendwise.db
+    volumes:
+      - spendwise_data:/data
+
+volumes:
+  spendwise_data:
